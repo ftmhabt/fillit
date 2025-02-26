@@ -31,6 +31,8 @@ export default function AddActivity({
         <button
           onClick={() => {
             onAdd(score);
+            setActivity("");
+            setScore(0);
             setIsOpen(false);
           }}
         >
