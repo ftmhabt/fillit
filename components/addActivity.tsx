@@ -10,10 +10,17 @@ export default function AddActivity({
   const [activity, setActivity] = useState("");
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Add</button>
+      <button className=" bg-red-400" onClick={() => setIsOpen(true)}>
+        Add
+      </button>
       <div
-        className={isOpen ? "flex flex-col absolute bg-slate-400" : "hidden"}
+        className={
+          isOpen
+            ? "flex flex-col fixed bg-slate-400 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
+            : "hidden"
+        }
       >
+        <button onClick={() => setIsOpen(false)}>close</button>
         <div className="flex">
           <input
             type="text"
