@@ -10,10 +10,15 @@ export default function Progress() {
   function AddScore(activityScore: number) {
     setScore((prev) => prev + activityScore);
   }
+  function calculateFillPercentage(score: number, goal: number) {
+    if (goal <= 0) return 0;
+    return (score / goal) * 100;
+  }
+  const percentageFilled = calculateFillPercentage(score, goal);
   return (
     <div>
-      <ProgressIndicator goal={goal} score={score} />
-      <WaveContainer goal={goal} score={score} />
+      <ProgressIndicator percentage={percentageFilled} />
+      <WaveContainer percentage={percentageFilled} />
       <AddActivity onAdd={AddScore} />
       <input
         type="text"

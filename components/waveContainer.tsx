@@ -1,10 +1,5 @@
-const WaveContainer = ({ score, goal }: { score: number; goal: number }) => {
-  function calculateFillPercentage(score: number, goal: number) {
-    if (goal <= 0) return 0;
-    return (score / goal) * 100;
-  }
-  const percentageFilled = calculateFillPercentage(score, goal);
-  const waveYPosition = 100 - percentageFilled;
+const WaveContainer = ({ percentage }: { percentage: number }) => {
+  const waveYPosition = 100 - percentage;
 
   return (
     <div className="flex flex-col items-center p-5 w-full">
